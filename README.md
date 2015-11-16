@@ -3,7 +3,7 @@ $ mongo
 
 **Specify new database (it doesn't persist it straight away):**
 ```
-use < name_of_db >
+use <name_of_db>
 ```
 ```
 use bank
@@ -76,6 +76,7 @@ db.users.find(
 )
 ```
 ```
+// comparison keywords: $lt, &gt, $lte, $gte and $ne
 db.users.find(
   {
     "age": {$lt:23}
@@ -83,12 +84,24 @@ db.users.find(
 )
 ```
 ```
+// AND clause
 db.users.find(
   {
-      "age": {$lt:23}, // comparison keywords: $lt, &gt, $lte, $gte and $ne 
-      "company":"OVATION" // where age > 23 and company = 'OVATION'
+      "age": {$lt:23},
+      "company":"OVATION"
   }
 )
+```
+```
+// OR clause
+db.users.find(
+  {
+    $or: [
+      {"isActive":true},
+      {"age": { $gte: 30 } }
+    ]
+  }
+).pretty()
 ```
 
 **Formating output:**
@@ -117,8 +130,3 @@ db.users.getIndexes()
 ```
 db.users.dropIndex({"age": 1})
 ```
-
-
-
-db.players.find( {"position":"Defenseman"}, {"name":1, _id:0} )
-db.players.find( { $or:[ {"position":"Left Wing"}, {"position":"Right Wing"} ] } )
