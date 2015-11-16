@@ -1,4 +1,4 @@
-##Mongo Tutorial Command Sheet - from ****newboston's**** Tutorials
+##Mongo Tutorial Command Sheet - from *newboston's* Tutorials
 $ mongo
 
 **Specify new database (it doesn't persist it straight away):**
@@ -28,7 +28,7 @@ db.users.insert{
       "balance": "$3,960.64",
       "age": 30,
       "eyeColor": "blue",
-      "name": "Dawn Keith",
+      "name": "Dawn Keith",or:
       "gender": "female",
       "company": "COSMOSIS",
       "email": "dawnkeith@cosmosis.com",
@@ -75,4 +75,22 @@ db.users.find(
     "age": {$lt:23}
   }
 )
+```
+**Inspect Query:**
+```
+db.users.find({ "age": {$lt:23} }).explain()
+```
+```
+db.users.find({ "age": {$lt:23} }).explain("executionStats")
+```
+
+**Indexes:**
+```
+db.users.ensureIndex({"age": 1})
+```
+```
+db.users.getIndexes()
+```
+```
+db.users.dropIndex({"age": 1})
 ```
