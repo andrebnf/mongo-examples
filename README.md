@@ -1,4 +1,4 @@
-##Mongo Tutorial Command Sheet - from *newboston's* Tutorials
+###Mongo Tutorial Command Sheet - from *newboston's* Tutorials
 $ mongo
 
 **Specify new database (it doesn't persist it straight away):**
