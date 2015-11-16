@@ -1,7 +1,7 @@
-###Mongo Tutorial Command Sheet - from *newboston's* Tutorials
+###Mongo Tutorial - Command Sheet
 $ mongo
 
-**Specify new database if not exists (it doesn't persist it straight away):**
+**Specify new database if not exists (it doesn't persist it straight away)**
 ```
 use <name_of_db>
 ```
@@ -9,17 +9,17 @@ use <name_of_db>
 use bank
 ```
 
-**List current database and all persisted databases:**
+**List current database and all persisted databases**
 ```
 db
 show dbs
 ```
 
-**Drop current database:**
+**Drop current database**
 ```
 db.dropDatabase()
 ```
-**Insert data from [buckyrobert's repo](https://github.com/buckyroberts/Source-Code-from-Tutorials/blob/master/Other/SampleJsonData/fake_bank_data.json):**
+**Insert data from [buckyrobert's repo](https://github.com/buckyroberts/Source-Code-from-Tutorials/blob/master/Other/SampleJsonData/fake_bank_data.json)**
 ```
 // create new collection users and insert data to it
 db.users.insert{
@@ -52,7 +52,7 @@ db.users.insert{
 }
 ```
 
-**Listing documents (registries):**
+**Listing documents (registries)**
 ```
 db.users.find() // shows all documents
 ```
@@ -66,12 +66,12 @@ db.users.find().limit(10) // shows only 10 documents
 db.users.find().skip(3) // shows after the third document
 ```
 
-**Prettify output:**
+**Prettify output**
 ```
 db.users.find().pretty()
 ```
 
-**Select by attribute:**
+**Select by attribute**
 ```
 db.users.find(
   {
@@ -100,7 +100,7 @@ db.users.find(
 ).pretty()
 ```
 
-**Formating output:**
+**Formating output**
 ```
 db.users.find(
   { "age": { $lt: 40 } },
@@ -108,7 +108,7 @@ db.users.find(
 )
 ```
 
-**Select by attribute:**
+**Select by attribute**
 ```
 db.users.find(
   {
@@ -131,7 +131,16 @@ db.users.find(
 )
 ```
 
-**Inspect Query:**
+**Update document**
+```
+// will delete all attribs and keed updated name
+db.users.update(
+  {"_id" : ObjectId("564a144ce1d05d069814a197")},
+  {"name":"John Locke"}
+)
+```
+
+**Inspect Query**
 ```
 db.users.find({ "age": {$lt:23} }).explain()
 ```
@@ -139,7 +148,7 @@ db.users.find({ "age": {$lt:23} }).explain()
 db.users.find({ "age": {$lt:23} }).explain("executionStats")
 ```
 
-**Indexes:**
+**Indexes**
 ```
 db.users.ensureIndex({"age": 1})
 ```
@@ -150,7 +159,7 @@ db.users.getIndexes()
 db.users.dropIndex({"age": 1})
 ```
 
-**Indexes:**
+**Aggregations**
 ```
 db.users.aggregate(
   {
@@ -161,7 +170,7 @@ db.users.aggregate(
 )
 ```
 
-**Creating a database user:**
+**Creating a database user**
 ```
 use bank
 db.createUser(
