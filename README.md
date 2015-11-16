@@ -1,5 +1,6 @@
 $ mongo
 
+Specify new database (it doesn't create it straight away):
 ```
 use < name_of_db >
 ```
