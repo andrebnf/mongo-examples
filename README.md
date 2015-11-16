@@ -1,7 +1,7 @@
 ##Mongo Tutorial Command Sheet - from ****newboston's**** Tutorials
 $ mongo
 
-**Specify new database (it doesn't create it straight away):**
+**Specify new database (it doesn't persist it straight away):**
 ```
 use < name_of_db >
 ```
@@ -51,10 +51,28 @@ db.users.insert{
 }
 ```
 
+**List all documents (registries):**
+```
+db.users.find()
+```
+
+**Prettify output:**
+```
+db.users.find().pretty()
+```
+
+**Select by attribute:**
 ```
 db.users.find(
   {
     "_id" : ObjectId("564a144ce1d05d069814a197")
+  }
+)
+```
+```
+db.users.find(
+  {
+    "age": {$lt:23}
   }
 )
 ```
