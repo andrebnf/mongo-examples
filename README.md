@@ -8,7 +8,7 @@ use < name_of_db >
 use bank
 ```
 [Insert data from buckyrobert's repo](https://github.com/buckyroberts/Source-Code-from-Tutorials/blob/master/Other/SampleJsonData/fake_bank_data.json)
-```json
+```
 db.users.insert{
   [
     {
@@ -39,7 +39,7 @@ db.users.insert{
 }
 ```
 
-```json
+```
 db.users.find(
   {
     "_id" : ObjectId("564a144ce1d05d069814a197")
