@@ -1,7 +1,7 @@
-##Mongo Tutorial Command Sheet - from **newboston's** Tutorials
+##Mongo Tutorial Command Sheet - from ****newboston's**** Tutorials
 $ mongo
 
-*Specify new database (it doesn't create it straight away):*
+**Specify new database (it doesn't create it straight away):**
 ```
 use < name_of_db >
 ```
@@ -9,17 +9,17 @@ use < name_of_db >
 use bank
 ```
 
-*List current database and all persisted databases:*
+**List current database and all persisted databases:**
 ```
 db
 show dbs
 ```
 
-*Drop current database:*
+**Drop current database:**
 ```
 db.dropDatabase()
 ```
-*Insert data from [buckyrobert's repo](https://github.com/buckyroberts/Source-Code-from-Tutorials/blob/master/Other/SampleJsonData/fake_bank_data.json)*
+**Insert data from [buckyrobert's repo](https://github.com/buckyroberts/Source-Code-from-Tutorials/blob/master/Other/SampleJsonData/fake_bank_data.json)**
 ```
 db.users.insert{
   [
