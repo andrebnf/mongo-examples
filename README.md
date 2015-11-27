@@ -108,7 +108,14 @@ db.users.find(
   }
 ).pretty()
 ```
-
+// IN clause
+```
+db.users.find(
+  {
+    age: { $in: [30, 35] } // brackets indicate interval 
+  }
+)
+```
 #####Formating output
 ```
 db.users.find(
