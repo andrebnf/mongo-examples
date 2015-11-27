@@ -9,17 +9,17 @@ use <name_of_db>
 use bank
 ```
 
-#####List current database and all persisted databases
-```
-db
-show dbs
-```
+#####List databases and collections
+Current databases: ```db```
+Persisted databases:```show dbs```
+Collections ```show collections``` 
 
 #####Drop current database
 ```
 db.dropDatabase()
 ```
 #####Insert data from [buckyrobert's repo](https://github.com/buckyroberts/Source-Code-from-Tutorials/blob/master/Other/SampleJsonData/fake_bank_data.json)
+
 ```
 // create new collection users and insert data to it
 db.users.insert{
@@ -184,4 +184,28 @@ db.createUser(
       ]
     }
 )
+```
+
+##### Remover
+```
+db.testData.remove( { x: 2} ) // removes all documents from the inventory collection
+```
+```
+db.testData.remove( { x: 18},1 ) // removes one document from the inventory collection
+```
+
+##### Functions
+```
+function insertData(dbName, colName, num) {
+  var col = db.getSiblingDB(dbName).getCollection(colName);
+
+  for (i = 0; i < num; i++) {
+    col.insert({x:i});
+  }
+  print(col.count());
+}
+```
+Usage:
+```
+insertData("ntbd", "testData", 400) // This operation inserts 400 documents into the testData collection in the ntbd database
 ```
