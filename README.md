@@ -71,10 +71,13 @@ db.users.find().skip(3) // shows after the third document
 db.users.find().pretty()
 ```
 
-#####Select by attribute
+#####Selecting documents
 ```
 db.users.find(
   {
+    "name" : "Owen Hood"
+  }
+)
 ```
 ```
 // comparison keywords: $lt, &gt, $lte, $gte and $ne
@@ -92,9 +95,15 @@ db.users.find(
       "company":"OVATION"
   }
 )
+```
+```
+// OR clause
+db.users.find(
+  {
+    "gender" : "female",
     $or: [
       {"isActive":true},
-      {"age": { $gte: 30 } }
+      {"age": { $gte: 990 } }
     ]
   }
 ).pretty()
