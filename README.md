@@ -12,13 +12,13 @@ use bank
 #####List databases and collections
 - Current databases: ```db```
 - Persisted databases:```show dbs```
-- Collections ```show collections``` 
+- Collections ```show collections```
 
 #####Drop current database
 ```
 db.dropDatabase()
 ```
-#####Insert data from [buckyrobert's repo](https://github.com/buckyroberts/Source-Code-from-Tutorials/blob/master/Other/SampleJsonData/fake_bank_data.json)
+#####Insert data (Example from [buckyrobert's repo](https://github.com/buckyroberts/Source-Code-from-Tutorials/blob/master/Other/SampleJsonData/fake_bank_data.json))
 
 ```
 // create new collection users and insert data to it
