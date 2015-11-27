@@ -10,11 +10,9 @@ use bank
 ```
 
 #####List databases and collections
-Current databases: ```db```
-
-Persisted databases:```show dbs```
-
-Collections ```show collections``` 
+- Current databases: ```db```
+- Persisted databases:```show dbs```
+- Collections ```show collections``` 
 
 #####Drop current database
 ```
