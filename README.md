@@ -1,7 +1,7 @@
-###Mongo Tutorial - Command Sheet
+### Mongo Tutorial - Command Sheet
 $ mongo
 
-#####Specify new database if not exists (it doesn't persist it straight away)
+##### Specify new database if not exists (it doesn't persist it straight away)
 ```
 use <name_of_db>
 ```
@@ -9,16 +9,17 @@ use <name_of_db>
 use bank
 ```
 
-#####List databases and collections
-- Current databases: ```db```
-- Persisted databases:```show dbs```
-- Collections ```show collections```
+##### List databases and collections
+- Current databases: `db`
+- Persisted databases: `show dbs`
+- Collections `show collections`
 
-#####Drop current database
+##### Drop current database
 ```
 db.dropDatabase()
 ```
-#####Insert data (Example from [buckyrobert's repo](https://github.com/buckyroberts/Source-Code-from-Tutorials/blob/master/Other/SampleJsonData/fake_bank_data.json))
+
+##### Insert data (Example from [buckyrobert's repo](https://github.com/buckyroberts/Source-Code-from-Tutorials/blob/master/Other/SampleJsonData/fake_bank_data.json))
 
 ```
 // create new collection users and insert data to it
@@ -29,7 +30,7 @@ db.users.insert{
       "balance": "$3,960.64",
       "age": 30,
       "eyeColor": "blue",
-      "name": "Dawn Keith",or:
+      "name": "Dawn Keith",
       "gender": "female",
       "company": "COSMOSIS",
       "email": "dawnkeith@cosmosis.com",
@@ -52,7 +53,7 @@ db.users.insert{
 }
 ```
 
-#####Listing documents (registries)
+##### Listing documents (registries)
 ```
 db.users.find() // shows all documents
 ```
@@ -66,16 +67,16 @@ db.users.find().limit(10) // shows only 10 documents
 db.users.find().skip(3) // shows after the third document
 ```
 
-#####Prettify output
+##### Prettify output
 ```
 db.users.find().pretty()
 ```
 
-#####Selecting documents
+##### Selecting documents
 ```
 db.users.find(
   {
-    "name" : "Owen Hood"
+    "name": "Owen Hood"
   }
 )
 ```
@@ -91,8 +92,8 @@ db.users.find(
 // AND clause
 db.users.find(
   {
-      "age": {$lt:23},
-      "company":"OVATION"
+    "age": {$lt:23},
+    "company": "OVATION"
   }
 )
 ```
@@ -116,7 +117,8 @@ db.users.find(
   }
 )
 ```
-#####Formating output
+
+##### Formating output
 ```
 db.users.find(
   { "age": { $lt: 40 } },
@@ -124,7 +126,7 @@ db.users.find(
 )
 ```
 
-#####Select by attribute
+##### Select by attribute
 ```
 db.users.find(
   {
@@ -147,7 +149,7 @@ db.users.find(
 )
 ```
 
-#####Update document
+##### Update document
 ```
 // will delete all attribs and keed updated name
 db.users.update(
@@ -156,7 +158,7 @@ db.users.update(
 )
 ```
 
-#####Inspect Query
+##### Inspect Query
 ```
 db.users.find({ "age": {$lt:23} }).explain()
 ```
@@ -164,7 +166,7 @@ db.users.find({ "age": {$lt:23} }).explain()
 db.users.find({ "age": {$lt:23} }).explain("executionStats")
 ```
 
-#####Indexes
+##### Indexes
 ```
 db.users.ensureIndex({"age": 1})
 ```
@@ -175,7 +177,7 @@ db.users.getIndexes()
 db.users.dropIndex({"age": 1})
 ```
 
-#####Aggregations
+##### Aggregations
 ```
 db.users.aggregate(
   {
@@ -186,7 +188,7 @@ db.users.aggregate(
 )
 ```
 
-#####Creating a database user
+##### Creating a database user
 ```
 use bank
 db.createUser(
